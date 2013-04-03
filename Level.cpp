@@ -98,13 +98,9 @@ void Level::update()
 
 		if ((*Iter)->isAlive() == false)
 		{
-			Sprite* temp = *Iter;
-
+			delete *Iter;
+			Iter = npc.erase(Iter);
 			Iter--;
-
-			delete temp;
-			npc.remove(temp);
-
 		}
 	}
 }
